@@ -8,5 +8,5 @@ Once crontab.txt changed it's affected after 1 minute.
 
 ## Usage:
 
-docker run --volume <host-path-to-crontab.txt>:/crontab.txt cron
+docker run --volume <host-path-to-crontab.txt>:/crontab.txt registry.format.hu/cron
 
