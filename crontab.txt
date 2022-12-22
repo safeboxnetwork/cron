@@ -1,3 +1,1 @@
-* * * * * echo "OK"
-* * * * * echo "OK2"
-* * * * * echo "OK3"
+* * * * * echo "Cron works"
