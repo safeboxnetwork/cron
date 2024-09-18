@@ -17,11 +17,6 @@
                                 "DEST": "/var/run/docker.sock",
                                 "TYPE": "rw"
                                 },
-                                {
-                                "SOURCE": "/usr/bin/docker",
-                                "DEST": "/usr/bin/docker",
-                                "TYPE": "ro"
-                                },
 				{
 				"SOURCE": "/run/",
 				"DEST": "/run/",
