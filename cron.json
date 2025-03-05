@@ -1,51 +1,57 @@
 {
-	"main": {
-		"SERVICE_NAME": "cron",
-		"DOMAIN": "null" 
-	},
-	"containers": [
-		{ 
-			"IMAGE": "registry.format.hu/cron",
-			"NAME": "cron",
-			"UPDATE": "true",
-			"MEMORY": "64M",
-			"NETWORK": "host",
-			"SCALE": "0",
-			"VOLUMES": [
-                                {
-                                "SOURCE": "/var/run/docker.sock",
-                                "DEST": "/var/run/docker.sock",
-                                "TYPE": "rw"
-                                },
-				{
-				"SOURCE": "/run/",
-				"DEST": "/run/",
-				"TYPE": "rw"
-				},
-				{
-				"SOURCE": "/etc/user/data/cron",
-				"DEST": "/opt/cron",
-				"TYPE": "ro"
-				},
-				{
-				"SOURCE": "/etc/user/config/services",
-				"DEST": "/services",
-				"TYPE": "ro"
-				}
-				],
-			"PORTS": [ ],
-			"READYNESS": [
-			        {"tcp": ""},
-			        {"HTTP": ""},
-				{"EXEC": "/ready.sh"}
-				],
-                        "ENVS": [ ], 
-			"EXTRA": "--privileged --restart unless-stopped",
-			"DEPEND": "null",
-			"START_ON_BOOT": "false",
-			"CMD": "null",
-			"PRE_START": "null",
-			"POST_START": "null"
-		}
-	]
+    "main": {
+        "SERVICE_NAME": "cron",
+        "DOMAIN": "null"
+    },
+    "containers": [
+        {
+            "IMAGE": "safebox/cron",
+            "NAME": "cron",
+            "UPDATE": "true",
+            "MEMORY": "64M",
+            "NETWORK": "host",
+            "SCALE": "0",
+            "VOLUMES": [
+                {
+                    "SOURCE": "/var/run/docker.sock",
+                    "DEST": "/var/run/docker.sock",
+                    "TYPE": "rw"
+                },
+                {
+                    "SOURCE": "/run/",
+                    "DEST": "/run/",
+                    "TYPE": "rw"
+                },
+                {
+                    "SOURCE": "/etc/user/data/cron",
+                    "DEST": "/opt/cron",
+                    "TYPE": "ro"
+                },
+                {
+                    "SOURCE": "/etc/user/config/services",
+                    "DEST": "/services",
+                    "TYPE": "ro"
+                }
+            ],
+            "PORTS": [],
+            "READYNESS": [
+                {
+                    "tcp": ""
+                },
+                {
+                    "HTTP": ""
+                },
+                {
+                    "EXEC": "/ready.sh"
+                }
+            ],
+            "ENVS": [],
+            "EXTRA": "--privileged --restart unless-stopped",
+            "DEPEND": "null",
+            "START_ON_BOOT": "false",
+            "CMD": "null",
+            "PRE_START": "null",
+            "POST_START": "null"
+        }
+    ]
 }
